@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional, Text, Type
 from rasa.nlu.classifiers.embedding_intent_classifier import EmbeddingIntentClassifier
 from rasa.nlu.classifiers.keyword_intent_classifier import KeywordIntentClassifier
 from rasa.nlu.classifiers.mitie_intent_classifier import MitieIntentClassifier
+from rasa_nlu.classifiers.bert_intent_classifier import BertIntentClassifier
 from rasa.nlu.classifiers.sklearn_intent_classifier import SklearnIntentClassifier
 from rasa.nlu.selectors.embedding_response_selector import ResponseSelector
 from rasa.nlu.extractors.crf_entity_extractor import CRFEntityExtractor
@@ -20,12 +21,14 @@ from rasa.nlu.extractors.mitie_entity_extractor import MitieEntityExtractor
 from rasa.nlu.extractors.spacy_entity_extractor import SpacyEntityExtractor
 from rasa.nlu.featurizers.count_vectors_featurizer import CountVectorsFeaturizer
 from rasa.nlu.featurizers.mitie_featurizer import MitieFeaturizer
+from rasa_nlu.featurizers.bert_featurizer import BertFeaturizer
 from rasa.nlu.featurizers.ngram_featurizer import NGramFeaturizer
 from rasa.nlu.featurizers.regex_featurizer import RegexFeaturizer
 from rasa.nlu.featurizers.spacy_featurizer import SpacyFeaturizer
 from rasa.nlu.model import Metadata
 from rasa.nlu.tokenizers.jieba_tokenizer import JiebaTokenizer
 from rasa.nlu.tokenizers.mitie_tokenizer import MitieTokenizer
+from rasa_nlu.tokenizers.bert_tokenizer import BertTokenizer
 from rasa.nlu.tokenizers.spacy_tokenizer import SpacyTokenizer
 from rasa.nlu.tokenizers.whitespace_tokenizer import WhitespaceTokenizer
 from rasa.nlu.utils.mitie_utils import MitieNLP
@@ -48,6 +51,7 @@ component_classes = [
     MitieNLP,
     # tokenizers
     MitieTokenizer,
+    BertTokenizer,
     SpacyTokenizer,
     WhitespaceTokenizer,
     JiebaTokenizer,
@@ -60,6 +64,7 @@ component_classes = [
     # featurizers
     SpacyFeaturizer,
     MitieFeaturizer,
+    BertFeaturizer,
     NGramFeaturizer,
     RegexFeaturizer,
     CountVectorsFeaturizer,
@@ -68,6 +73,7 @@ component_classes = [
     MitieIntentClassifier,
     KeywordIntentClassifier,
     EmbeddingIntentClassifier,
+    BertIntentClassifier,
     # selectors
     ResponseSelector,
 ]
